@@ -184,6 +184,23 @@ nav.navigation a.button {
   }
 }
 
+#single .my-toc {
+  position: fixed;
+  top: 10%;
+  right: 80px;
+  background-color: #fff;
+  padding: 24px;
+  max-height: 80vh;
+  min-width: 200px;
+  overflow-y: auto;
+}
+
+@media (max-width: 700px) {
+  #single .my-toc {
+    display: none;
+  }
+}
+
 /* toc */
 .toc {
   margin: auto;

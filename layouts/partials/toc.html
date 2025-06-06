@@ -1,9 +1,9 @@
 {{ with .TableOfContents }}
   {{ if ne . "<nav id=\"TableOfContents\"></nav>" }}
     <aside class="toc">
-      <details>
+      <details open>
           <summary>
-              {{- i18n "toc" | default "Table of Contents" }}
+             目录
           </summary>
           <div>
               {{ . }}

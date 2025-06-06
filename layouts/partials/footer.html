@@ -1,5 +1,5 @@
 <footer id="footer">
-    {{ if .Site.Social }}
+    {{ if .Site.Params.Social }}
         {{ partial "social.html" . }}
     {{ end }}
 
@@ -16,11 +16,6 @@
     {{ end }}
     </div>
 
-    {{ if ne .Site.Params.showPowerBy false }}
-      <div class="powerby">
-        {{ i18n "poweredBy" | safeHTML }}
-      </div>
-    {{ end }}
 </footer>
 
 {{ range .Site.Params.customJS }}
