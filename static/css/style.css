@@ -186,16 +186,19 @@ nav.navigation a.button {
 
 #single .my-toc {
   position: fixed;
-  top: 10%;
-  right: 80px;
+  top: 5%;
+  right: 0px;
   background-color: #fff;
   padding: 24px;
-  max-height: 80vh;
   min-width: 200px;
+}
+
+#single .my-toc details nav {
+  max-height: 70vh;
   overflow-y: auto;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1080px) {
   #single .my-toc {
     display: none;
   }
@@ -267,14 +270,14 @@ nav.navigation a.button {
 /* profile  */
 
 .profile {
-  margin: 60px auto 0 auto;
+  margin: 20px auto 0 auto;
   text-align: center;
 }
 
 .profile .avatar {
   display: inline-block;
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 
