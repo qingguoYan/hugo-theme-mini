@@ -5,6 +5,31 @@
 
     {{ partial "head.html" . }}
 
+    <style>
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #333;
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s;
+      }
+      .back-to-top:hover {
+        background-color: #555;
+      }
+      .back-to-top svg {
+        width: 20px;
+        height: 20px;
+      }
+    </style>
   </head>
 
   <body>
@@ -15,5 +40,34 @@
     </main>
     
     {{ partial "footer.html" . }}
+
+    <button class="back-to-top" id="backToTop" title="回到顶部">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 19V5M5 12l7-7 7 7"/>
+      </svg>
+    </button>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var backToTopButton = document.getElementById('backToTop');
+        
+        // 当页面滚动时显示/隐藏按钮
+        window.onscroll = function() {
+          if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            backToTopButton.style.display = 'flex';
+          } else {
+            backToTopButton.style.display = 'none';
+          }
+        };
+        
+        // 点击按钮时滚动到顶部
+        backToTopButton.addEventListener('click', function() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
   </body>
 </html>
